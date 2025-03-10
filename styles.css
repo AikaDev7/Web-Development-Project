@@ -1,0 +1,199 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Styles */
+header {
+    background-color: #f4f4f4;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Home Page Styles */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.highlights {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.achievement-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.achievement {
+    max-width: 300px;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* About Page Styles */
+.about-page {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+}
+
+.profile-image {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.profile-image img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.biography {
+    flex: 2;
+}
+
+.biography h1 {
+    margin-bottom: 1rem;
+}
+
+.biography p {
+    margin-bottom: 1rem;
+}
+
+/* Contact Page Styles */
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+/* Design */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .achievement-grid {
+        flex-direction: column;
+    }
+
+    .achievement {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
