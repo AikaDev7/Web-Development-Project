@@ -1,22 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Contact form functionality
-    const submitButton = document.getElementById('submitButton');
     const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
     
-    if (submitButton) {
-        submitButton.addEventListener('click', () => {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+    if (contactForm) {
+        // Add client-side validation before form submission
+        contactForm.addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
             
-            // Basic form validation
-            if (name && email && message) {
-                alert('This is a demonstration form.');
-                
-                contactForm?.reset();
-            } else {
-                alert('Please fill out all fields.');
+            if (!name || !email || !message) {
+                event.preventDefault();
+                formStatus.textContent = 'Please fill out all fields.';
+                formStatus.style.color = 'red';
+                return false;
             }
+            
+            // Email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                event.preventDefault();
+                formStatus.textContent = 'Please enter a valid email address.';
+                formStatus.style.color = 'red';
+                return false;
+            }
+            
+            formStatus.textContent = 'Submitting...';
+            formStatus.style.color = 'blue';
+            // Form will submit normally to the server
         });
     }
     
@@ -36,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Home page animation effect for achievements
+    // Home page animation effect for achievements 
     const achievements = document.querySelectorAll('.achievement');
     if (achievements.length > 0) {
         // Add hover effect to achievement boxes
