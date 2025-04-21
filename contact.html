@@ -20,7 +20,7 @@
     <main class="contact-page">
         <section class="contact-container">
             <h1>Get in Touch</h1>
-            <form id="contactForm">
+            <form id="contactForm" action="/submit-contact" method="post">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -33,8 +33,8 @@
                     <label for="message">Your Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="button" id="submitButton" class="btn">Send Message</button>
-                <p class="form-note">Note: This is a demonstration form.</p>
+                <button type="submit" class="btn">Send Message</button>
+                <p class="form-status" id="formStatus"></p>
             </form>
         </section>
     </main>
@@ -43,6 +43,6 @@
         <p>&copy; 2025 Aiya Bakhitzhanova. All rights reserved.</p>
     </footer>
 
-    <script src="jscript.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
